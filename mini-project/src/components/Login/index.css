@@ -1,0 +1,137 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('https://s3-alpha-sig.figma.com/img/8cca/f66f/19edc15e3aa6b6a1301fd6667bf2509e?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ImvjckK67p1rp5PIBgr~NA6-wsjerMDNMMAwGSldLuAOht8Ou2L4~94pxAsks2QjsGFuT0RrfKDuO2NLdXEqWuqqlpQeztz73FiPj4zc5B0YplS6d7YKEhMdIkhUX9e1~e9OX1yMi4ErQ-5t0kOyHkjYL0YW0qu49eHqPlsKUGcRb4EFSAs~NaPw~UL~4wKV0TS-pLrwO~CTojCADDaKXgNG7e~dzeyJExzgSk9lhzfRSeRQDxkqA7q7YIca~i~uJ3f2swmro~~aFbCGmaLeIvxjurLSVb00IQpp6Regy-UwzrvbTp34YLV4SFAPR6FgyF0roAY~YRiNt6Dp6UHi-g__'); 
+    background-size: cover;
+    overflow: hidden;
+}
+
+.middle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.web-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.login-form-container {
+    background-color: #0C0B10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    height: 320px;
+    box-sizing: border-box;
+}
+
+.login-heading {
+    font-family: "Roboto";
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.user-input-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+    max-width: 300px; 
+    margin-bottom: 15px;
+}
+
+.user-lables {
+    font-family: "Roboto";
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.user-input {
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    background: #333333;
+    padding: 10px;
+    color: #F8FAFC;
+    box-sizing: border-box;
+}
+
+.submit-button {
+    width: 100%;
+    max-width: 300px;
+    height: 40px;
+    background: #E50914;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 700;
+    color: #F8FAFC;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    box-sizing: border-box; 
+}
+
+.error-message {
+    color: #E50914;
+    font-family: "Roboto";
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .login-container {
+        justify-content: flex-start;
+        padding: 10px;
+        background-image: none; 
+        background-color: #0C0B10; 
+    }
+
+    .web-logo {
+        height: 28px;
+    }
+
+    .login-heading {
+        font-size: 20px;
+        align-self: flex-start;
+        margin-left: 20px;
+    }
+
+    .middle-container {
+        align-items: flex-start; 
+        padding-left: 10px;
+    }
+
+    .login-form-container {
+        padding: 16px;
+        margin: 0;
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .user-input-container,
+    .submit-button {
+        width: 100%;
+        max-width: 250px; 
+    }
+
+    .user-input,
+    .submit-button {
+        height: 40px;
+    }
+}
