@@ -1,0 +1,52 @@
+.nav-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 12vh;
+    padding: 0 20px;
+    background-color: transparent;
+}
+
+.first-container {
+    display: flex;
+    gap: 150px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.web-logo {
+    height: 30px;
+}
+
+.home-popular-container {
+    display: flex;
+    gap: 15px;
+    list-style-type: none; /* Ensure list style is removed */
+    padding: 0; /* Reset padding for ul */
+    margin: 0; /* Reset margin for ul */
+} 
+
+.nav-link {
+    text-decoration: none; /* Remove underline */
+    color: rgb(133, 141, 148);
+    font-size: 20px;
+    font-family: "Roboto";
+    font-weight: 600;
+}
+
+.account-search-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-icon {
+    height: 40px;
+}
+
+.avatar-icon {
+    height: 50px;
+}

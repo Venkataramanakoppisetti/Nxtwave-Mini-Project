@@ -1,11 +1,14 @@
 import React from 'react';
+import Header from '../Header';
 
 const Home = () => {
   return (
     <>
-      <div>
-        <h1>This is Home</h1>
+      <Header />
+      <div className="poster-container">
+        
       </div>
+      <div className="trending-now-originals-container"></div>
     </>
   );
 }

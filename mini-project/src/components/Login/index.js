@@ -97,8 +97,9 @@ const Login = () => {
                                 onChange={onChangePassword} 
                             />
                         </div>
-                        <button type="submit" className="submit-button">Login</button>
                         {showSubmitError && <p className="error-message">{errorMsg}</p>}
+                        <button type="submit" className="submit-button">Login</button>
+                        
                     </form>
                 </div>
             </div>
