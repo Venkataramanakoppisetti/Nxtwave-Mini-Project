@@ -4,7 +4,7 @@
     align-items: center;
     height: 12vh;
     padding: 0 20px;
-    background-color: transparent;
+    background-color: violet;
 }
 
 .first-container {
@@ -19,6 +19,8 @@
 
 .web-logo {
     height: 30px;
+    margin-left: 30px;
+
 }
 
 .home-popular-container {
@@ -27,6 +29,7 @@
     list-style-type: none; /* Ensure list style is removed */
     padding: 0; /* Reset padding for ul */
     margin: 0; /* Reset margin for ul */
+    margin-left: 30px;
 } 
 
 .nav-link {
@@ -43,10 +46,148 @@
     gap: 15px;
 }
 
+.search-container {
+    position: relative; /* Allow absolute positioning of child elements */
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
 .search-icon {
     height: 40px;
+    cursor: pointer; 
+    margin-right: 5px; 
 }
 
 .avatar-icon {
     height: 50px;
 }
+
+.search-container {
+    position: relative; /* Allow absolute positioning of child elements */
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+.search-input {
+    height: 40px;
+    padding: 0 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px; /* Rounded corners */
+    margin-right: 10px; /* Space between input and icon */
+    display: none; /* Initially hidden */
+}
+
+.search-container.open .search-input {
+    display: block; /* Show input when open */
+    width: 200px; /* Fixed width for desktop */
+}
+
+
+@media screen and (min-width: 769px) {
+    .nav-mobile-header-container {
+        display: none;
+    }
+
+    .drop-down-container {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .nav-header-container {
+        display: none;
+    }
+
+
+
+    .nav-mobile-header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 12vh;
+        padding: 0px 20px;
+        background-color: violet;
+    }
+
+    .web-logo {
+        margin-top: 10px;
+        margin-left: 15px;
+    }
+
+    .search-hamburger-container {
+        display: flex;
+        gap: 10px;
+    }
+
+    .hamburger-icon {
+        height: 40px;
+        cursor: pointer; 
+        margin-right: 5px; 
+        margin-left: 5px;
+    }
+
+    .drop-down-container {
+        display: none; 
+        position: absolute; /* Position it below the nav */
+        top: 12vh; /* Adjust this value based on your nav height */
+        left: 0;
+        right: 0; /* Expand to full width */
+        background-color: rgb(18, 15, 15); /* Background color */
+        border: 1px solid #ccc; /* Optional border */
+        z-index: 10; /* Ensure it appears above other content */
+        padding: 10px; /* Padding for content inside */
+        flex-direction: row; /* Stack items vertically */
+    }
+    
+    .drop-down-container.open {
+        display: flex; /* Show when dropdown is open */
+        justify-content: space-between;
+        align-items: center; /* Center items vertically */
+    }
+    
+    .drop-down-nav-links {
+        display: flex; /* Use flexbox for horizontal layout */
+        gap: 120px; /* Space between items */
+        align-items: center; /* Center items vertically */
+    }
+
+    .drop-navs {
+        list-style-type: none; /* Ensure list style is removed */
+    }
+    
+    .drop-navs a {
+        text-decoration: none; /* Remove underline from links */
+        color: rgb(133, 141, 148); /* Maintain link color */
+    }
+    
+    
+    .drop-down-close-icon {
+        cursor: pointer; /* Change cursor on hover */
+        height: 30px; /* Adjust icon size */
+    }
+
+    .hamburger-button,
+    .close-button {
+        background: none; /* Remove background */
+        border: none; /* Remove border */
+        padding: 0; /* Remove padding */
+        cursor: pointer; /* Change cursor to pointer */
+    }
+
+    .hamburger-button:focus,
+    .close-button:focus {
+        outline: none; /* Remove focus outline for a cleaner look */
+    }
+
+    .search-container.open .search-input {
+        width: 150px; /* Adjust width for mobile */
+    }
+
+    .search-icon {
+        cursor: pointer; 
+    }
+
+}
+
