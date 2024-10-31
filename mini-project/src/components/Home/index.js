@@ -5,6 +5,7 @@ const Home = () => {
   return (
     <>
       <Header />
+      <h1>This is home</h1>
       <div className="poster-container">
         
       </div>
