@@ -139,6 +139,8 @@
         z-index: 10; /* Ensure it appears above other content */
         padding: 10px; /* Padding for content inside */
         flex-direction: row; /* Stack items vertically */
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
     
     .drop-down-container.open {
@@ -149,8 +151,9 @@
     
     .drop-down-nav-links {
         display: flex; /* Use flexbox for horizontal layout */
-        gap: 120px; /* Space between items */
+        justify-content: space-around;
         align-items: center; /* Center items vertically */
+        gap: 50px;
     }
 
     .drop-navs {
