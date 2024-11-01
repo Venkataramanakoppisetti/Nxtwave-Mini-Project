@@ -5,19 +5,20 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    padding-left: 32px;
-    padding-right: 19px;
+    padding-left: 10px;
+    padding-right: 10px;
     display: flex;
     flex-wrap: wrap;
     margin-top: 8px;
     margin-top: 80px;
-    margin-left: 40px;
+    gap: 15px;
+    margin-left: 32px;
   }
   @media (min-width: 768px) {
     .popular-list {
       margin-top: 32px;
-      padding-left: 165px;
-      padding-right: 135px;
+      /* padding-left: 100px;
+      padding-right: 100px; */
     }
   }
   
