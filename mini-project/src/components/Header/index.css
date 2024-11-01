@@ -110,8 +110,9 @@
     }
 
     .web-logo {
-        margin-top: 10px;
-        margin-left: 40px;
+        margin-top: 20px;
+        margin-left: 20px;
+        height: 20px;
     }
 
     .search-hamburger-container {
@@ -149,7 +150,7 @@
     .drop-down-nav-links {
         display: flex; 
         justify-content: space-around;
-        margin-left: 70px;
+        margin-left: 60px;
         gap: 35px;
     }
 
@@ -182,7 +183,8 @@
     }
 
     .search-container.open .search-input {
-        width: 150px;
+        width: 120px;
+        font-size: 12px;
     }
 
     .search-icon {
@@ -190,8 +192,9 @@
     }
 
     .drop-down-close-icon {
-        height: 22px;
-        margin-right: 80px;
+        height: 20px;
+        margin-right: 40px;
+        margin-top: 5px;
     }
 
 }
