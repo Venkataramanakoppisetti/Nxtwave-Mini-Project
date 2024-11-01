@@ -1,0 +1,24 @@
+/* Reset and base styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .trending-container {
+    padding: 20px;
+    margin: 20px auto;
+    margin-bottom: 0;
+    max-width: 1200px;
+    background-color: #1c1a1a; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  }
+  
+  @media (max-width: 768px) {
+    .trending-container {
+      padding: 10px;
+      margin: 10px;
+    }
+  }
+  
