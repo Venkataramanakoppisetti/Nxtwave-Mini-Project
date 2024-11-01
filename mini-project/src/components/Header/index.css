@@ -62,25 +62,20 @@
     height: 50px;
 }
 
-.search-container {
-    position: relative; /* Allow absolute positioning of child elements */
-    display: flex;
-    align-items: center; /* Center items vertically */
-}
 
 .search-input {
     height: 40px;
     padding: 0 10px;
     font-size: 16px;
     border: 1px solid #ccc;
-    border-radius: 20px; /* Rounded corners */
-    margin-right: 10px; /* Space between input and icon */
-    display: none; /* Initially hidden */
+    border-radius: 20px; 
+    margin-right: 10px;
+    display: none;
 }
 
 .search-container.open .search-input {
-    display: block; /* Show input when open */
-    width: 200px; /* Fixed width for desktop */
+    display: block; 
+    width: 400px; 
 }
 
 
@@ -130,45 +125,45 @@
 
     .drop-down-container {
         display: none; 
-        position: absolute; /* Position it below the nav */
-        top: 12vh; /* Adjust this value based on your nav height */
+        position: absolute; 
+        top: 12vh;
         left: 0;
-        right: 0; /* Expand to full width */
-        background-color: rgb(18, 15, 15); /* Background color */
-        border: 1px solid #ccc; /* Optional border */
-        z-index: 10; /* Ensure it appears above other content */
-        padding: 10px; /* Padding for content inside */
-        flex-direction: row; /* Stack items vertically */
+        right: 0;
+        background-color: rgb(18, 15, 15); 
+        border: 1px solid #ccc;
+        z-index: 10; 
+        padding: 10px; 
+        flex-direction: row; 
         flex-wrap: wrap;
         justify-content: space-between;
     }
     
     .drop-down-container.open {
-        display: flex; /* Show when dropdown is open */
+        display: flex; 
         justify-content: space-between;
-        align-items: center; /* Center items vertically */
+        align-items: center; 
     }
     
     .drop-down-nav-links {
-        display: flex; /* Use flexbox for horizontal layout */
+        display: flex; 
         justify-content: space-around;
-        align-items: center; /* Center items vertically */
-        gap: 50px;
+        align-items: center; 
+        gap: 35px;
     }
 
     .drop-navs {
-        list-style-type: none; /* Ensure list style is removed */
+        list-style-type: none; 
     }
     
     .drop-navs a {
-        text-decoration: none; /* Remove underline from links */
-        color: rgb(133, 141, 148); /* Maintain link color */
+        text-decoration: none; 
+        color: rgb(133, 141, 148); 
     }
     
     
     .drop-down-close-icon {
-        cursor: pointer; /* Change cursor on hover */
-        height: 30px; /* Adjust icon size */
+        cursor: pointer; 
+        height: 30px;
     }
 
     .hamburger-button,
