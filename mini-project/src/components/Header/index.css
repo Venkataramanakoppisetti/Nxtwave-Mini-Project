@@ -150,7 +150,7 @@
     .drop-down-nav-links {
         display: flex; 
         justify-content: space-around;
-        margin-left: 60px;
+        margin-left: 40px;
         gap: 35px;
     }
 
@@ -193,7 +193,7 @@
 
     .drop-down-close-icon {
         height: 20px;
-        margin-right: 40px;
+        margin-right: 30px;
         margin-top: 5px;
     }
 
