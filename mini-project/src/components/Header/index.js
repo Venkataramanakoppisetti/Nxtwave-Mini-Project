@@ -4,7 +4,6 @@ import searchIcon from '../../Assets/search-icon.png';
 import avatarIcon from '../../Assets/Avatar-icon.png';
 import hamburgerIcon from '../../Assets/hamburger-icon.png';
 import closeIcon from '../../Assets/close.png';
-import { BiSolidCameraMovie } from "react-icons/bi";
 import './index.css';
 
 const Header = () => {
@@ -74,7 +73,11 @@ const Header = () => {
             <nav className="nav-mobile-header-container">
                 <div className="logo-container">
                     <Link to={"/"}>
-                        <BiSolidCameraMovie size={30} color='red' />
+                        <img 
+                            src="https://res.cloudinary.com/ddry7fpzp/image/upload/v1662296727/Movies_Logo_vr3wvf.png" 
+                            alt="Logo" 
+                            className="web-logo" 
+                        />
                     </Link>
                 </div>
                 <div className="search-hamburger-container">

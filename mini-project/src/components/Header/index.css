@@ -9,7 +9,8 @@
 
 .first-container {
     display: flex;
-    gap: 150px;
+    margin-left: 80px;
+    gap: 180px;
 }
 
 .logo-container {
@@ -19,7 +20,7 @@
 
 .web-logo {
     height: 30px;
-    margin-left: 30px;
+    margin-left: 150px;
 
 }
 
@@ -44,6 +45,7 @@
     display: flex;
     align-items: center;
     gap: 15px;
+    margin-right: 150px;
 }
 
 .search-container {
@@ -109,7 +111,7 @@
 
     .web-logo {
         margin-top: 10px;
-        margin-left: 15px;
+        margin-left: 40px;
     }
 
     .search-hamburger-container {
@@ -130,8 +132,7 @@
         top: 12vh;
         left: 0;
         right: 0;
-        background-color: rgb(18, 15, 15); 
-        border: 1px solid #ccc;
+        background-color: transparent; 
         z-index: 10; 
         padding: 10px; 
         flex-direction: row; 
@@ -148,7 +149,7 @@
     .drop-down-nav-links {
         display: flex; 
         justify-content: space-around;
-        align-items: center; 
+        margin-left: 70px;
         gap: 35px;
     }
 
@@ -158,7 +159,7 @@
     
     .drop-navs a {
         text-decoration: none; 
-        color: rgb(133, 141, 148); 
+        color: rgb(239, 241, 243); 
     }
     
     
@@ -177,15 +178,20 @@
 
     .hamburger-button:focus,
     .close-button:focus {
-        outline: none; /* Remove focus outline for a cleaner look */
+        outline: none; 
     }
 
     .search-container.open .search-input {
-        width: 150px; /* Adjust width for mobile */
+        width: 150px;
     }
 
     .search-icon {
         cursor: pointer; 
+    }
+
+    .drop-down-close-icon {
+        height: 22px;
+        margin-right: 80px;
     }
 
 }
