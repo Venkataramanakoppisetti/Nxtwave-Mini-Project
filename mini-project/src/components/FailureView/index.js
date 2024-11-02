@@ -8,6 +8,7 @@ const FailureView = props => {
     onClickRetry()
   }
 
+
   return (
     <div className="failure-container">
       <img

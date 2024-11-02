@@ -1,5 +1,5 @@
-import React, { useState } from 'react'; // Import useState for managing state
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import searchIcon from '../../Assets/search-icon.png';
 import avatarIcon from '../../Assets/Avatar-icon.png';
 import hamburgerIcon from '../../Assets/hamburger-icon.png';
@@ -7,9 +7,10 @@ import closeIcon from '../../Assets/close.png';
 import './index.css';
 
 const Header = () => {
+    const location = useLocation();
     const [isDropDownOpen, setDropDownStatus] = useState(false);
-    const [isSearchOpen, setSearchOpen] = useState(false); // State for search input
-    const [searchTerm, setSearchTerm] = useState(''); // State for search term
+    const [isSearchOpen, setSearchOpen] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('');
 
     const onOpeningDropdown = () => {
         setDropDownStatus(!isDropDownOpen);
@@ -18,7 +19,7 @@ const Header = () => {
     const toggleSearch = () => {
         setSearchOpen(!isSearchOpen);
         if (isSearchOpen) {
-            setSearchTerm(''); // Clear search term when closing
+            setSearchTerm('');
         }
     }
 
@@ -50,21 +51,23 @@ const Header = () => {
                 </div>
                 
                 <div className="account-search-container">
-                    <div className={`search-container ${isSearchOpen ? 'open' : ''}`}>
-                        <input
-                            type="text"
-                            value={searchTerm}
-                            onChange={handleSearchChange}
-                            placeholder="Search movies..."
-                            className="search-input"
-                        />
-                        <img 
-                            src={searchIcon} 
-                            alt="search" 
-                            className="search-icon" 
-                            onClick={toggleSearch}
-                        />
-                    </div>
+                    {location.pathname !== '/account' && (
+                        <div className={`search-container ${isSearchOpen ? 'open' : ''}`}>
+                            <input
+                                type="text"
+                                value={searchTerm}
+                                onChange={handleSearchChange}
+                                placeholder="Search movies..."
+                                className="search-input"
+                            />
+                            <img 
+                                src={searchIcon} 
+                                alt="search" 
+                                className="search-icon" 
+                                onClick={toggleSearch}
+                            />
+                        </div>
+                    )}
                     <Link to={'/account'}>
                         <img src={avatarIcon} alt="avatar" className="avatar-icon" />
                     </Link>
@@ -81,21 +84,23 @@ const Header = () => {
                     </Link>
                 </div>
                 <div className="search-hamburger-container">
-                    <div className={`search-container ${isSearchOpen ? 'open' : ''}`}>
-                        <input
-                            type="text"
-                            value={searchTerm}
-                            onChange={handleSearchChange}
-                            placeholder="Search movies..."
-                            className="search-input"
-                        />
-                        <img 
-                            src={searchIcon} 
-                            alt="search" 
-                            className="search-icon" 
-                            onClick={toggleSearch}
-                        />
-                    </div>
+                    {location.pathname !== '/account' && (
+                        <div className={`search-container ${isSearchOpen ? 'open' : ''}`}>
+                            <input
+                                type="text"
+                                value={searchTerm}
+                                onChange={handleSearchChange}
+                                placeholder="Search movies..."
+                                className="search-input"
+                            />
+                            <img 
+                                src={searchIcon} 
+                                alt="search" 
+                                className="search-icon" 
+                                onClick={toggleSearch}
+                            />
+                        </div>
+                    )}
                     <button className='hamburger-button' onClick={onOpeningDropdown}>
                         <img 
                             src={hamburgerIcon} 
