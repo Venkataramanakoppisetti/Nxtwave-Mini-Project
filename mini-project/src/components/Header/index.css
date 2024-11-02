@@ -49,9 +49,9 @@
 }
 
 .search-container {
-    position: relative; /* Allow absolute positioning of child elements */
+    position: relative; 
     display: flex;
-    align-items: center; /* Center items vertically */
+    align-items: center;
 }
 
 .search-icon {
@@ -124,6 +124,7 @@
         cursor: pointer; 
         margin-right: 5px; 
         margin-left: 5px;
+        margin-bottom: 30px;
     }
 
     .drop-down-container {
@@ -185,11 +186,13 @@
         width: 120px;
         height: 30px;
         font-size: 12px;
+        margin-bottom: 30px;
     }
 
     .search-icon {
         cursor: pointer; 
         height: 20px;
+        margin-bottom: 30px;
     }
 
     .drop-down-close-icon {
