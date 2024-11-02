@@ -1,37 +1,56 @@
+/* Ensure the HTML and body take full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-sec {
+    background-color: black;
+}
+
+/* Account container adjusts to fill the remaining space */
 .account-container {
-    padding: 10px;
+    flex: 1; /* Allow this container to grow and fill available space */
+    padding: 40px 10px 10px 10px; /* Top and side padding */
     display: flex;
     flex-direction: column;
     background-color: #d7b2b2;
-    padding-top: 40px;
-  }
-  
-  .heading {
+    box-sizing: border-box; /* Ensure padding doesn’t expand the container */
+}
+
+/* Heading style */
+.heading {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 22px;
     color: #131313;
     margin-bottom: 8px;
-  }
-  .header-sec {
-    background-color: black;
-  }
-  
-  .hz-line {
+}
+
+/* Horizontal line style */
+.hz-line {
     border: none;
     border-top: 3px solid #cbd5e1;
     border-radius: 10px;
     margin-bottom: 24px;
-  }
-  
-  .membership-container {
+}
+
+/* Membership container styling */
+.membership-container {
     margin-bottom: 24px;
     display: flex;
     align-items: flex-start;
-  }
-  
-  .member-details {
+}
+
+/* Member details style */
+.member-details {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 600;
@@ -39,13 +58,14 @@
     line-height: 23px;
     color: #94a3b8;
     margin-right: 11px;
-  }
+}
 
-  /* .user-details {
-    margin-top: 5px;
-  } */
-  
-  .username {
+.user-details {
+    margin-top: -5px;
+}
+
+/* Username and password style */
+.username {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
@@ -53,25 +73,24 @@
     color: #1e293b;
     margin-bottom: 6px;
     margin-top: 7px;
-  }
-  .password {
+}
+
+.password {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
     color: #64748b;
-  }
-  .password-container {
-    display: flex;
-    align-items: center;
-  }
-  .plan-details-container {
+}
+
+/* Plan details styling */
+.plan-details-container {
     display: flex;
     align-items: center;
     margin-bottom: 24px;
-  }
-  
-  .plan-type {
+}
+
+.plan-type {
     font-family: 'Roboto';
     margin-left: 10px;
     font-style: normal;
@@ -85,9 +104,10 @@
     height: 22px;
     width: 64px;
     margin-top: 5px;
-  }
-  
-  .logout-btn {
+}
+
+/* Logout button style */
+.logout-btn {
     font-family: 'Roboto';
     height: 50px;
     width: 89px;
@@ -100,49 +120,65 @@
     line-height: 24px;
     align-self: center;
     border: none;
-    margin: 24px;
+    margin: 24px auto 0 auto; 
     cursor: pointer;
     outline: none;
-  }
-  @media (min-width: 768px) {
-    .account-container {
-      padding-left: 165px;
-      padding-right: 165px;
-      padding-top: 64px;
-    }
-  
-    .heading {
-      margin-bottom: 24px;
-    }
-  
-    .member-details {
-      margin-right: 24px;
-      font-size: 24px;
-      line-height: 31px;
-    }
-  
-    .username {
-      font-size: 24px;
-      line-height: 31px;
-      margin-bottom: 13px;
-    }
-  
-    .password {
-      font-size: 24px;
-      line-height: 31px;
-    }
-  
-    .plan-type {
-      font-size: 18px;
-      line-height: 23px;
-      width: 79px;
-      height: 27px;
-    }
-  
-    .logout-btn {
-      margin-top: 40px;
-    }
-  }
-  .footer-sec {
+}
+
+/* Footer section style */
+.footer-sec {
     background-color: black;
-  }
+    padding: 10px 0; 
+    width: 100%; 
+    margin-top: auto; /* Keep the footer at the bottom */
+}
+
+/* Media queries for responsive design */
+@media (min-width: 768px) {
+    .account-container {
+        padding: 64px 165px 10px 165px; /* Adjust padding for larger screens */
+    }
+
+    .heading {
+        margin-bottom: 24px;
+    }
+
+    .member-details {
+        margin-right: 24px;
+        font-size: 24px;
+        line-height: 31px;
+    }
+
+    .username {
+        font-size: 24px;
+        line-height: 31px;
+        margin-bottom: 13px;
+    }
+
+    .password {
+        font-size: 24px;
+        line-height: 31px;
+    }
+
+    .plan-type {
+        font-size: 16px;
+        line-height: 23px;
+        width: 79px;
+        height: 27px;
+        margin-top: -5px;
+    }
+
+    .logout-btn {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .account-container {
+        padding: 40px 10px 10px 10px; /* Adjust padding for smaller screens */
+    }
+
+    .footer-sec {
+        padding: 5px 0;
+    }
+}

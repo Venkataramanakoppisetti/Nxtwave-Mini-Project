@@ -2,9 +2,13 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  display: flex; /* Flexbox layout */
+  flex-direction: column; /* Arrange children in a column */
+  min-height: 100vh; /* Full height */
 }
 
-*, *::before, *::after {
-  box-sizing: inherit;
+.App {
+  flex: 1; /* Fill available space */
+  display: flex; /* Flexbox layout */
+  flex-direction: column; /* Arrange children in a column */
 }
-
