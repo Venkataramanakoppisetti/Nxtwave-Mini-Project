@@ -105,7 +105,7 @@
         justify-content: space-between;
         align-items: center;
         height: 12vh;
-        padding: 0px 20px;
+        padding: 0px 10px;
         background-color: transparent;
     }
 
@@ -160,7 +160,9 @@
     
     .drop-navs a {
         text-decoration: none; 
-        color: rgb(239, 241, 243); 
+        color: rgb(22, 106, 190); 
+        font-size: 12px;
+        font-weight: 600px;
     }
     
     
