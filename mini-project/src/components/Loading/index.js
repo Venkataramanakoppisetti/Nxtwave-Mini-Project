@@ -4,7 +4,7 @@ import './index.css'
 
 const Loading = () => (
   <div className="loader-container" data-testid="loader">
-    <TailSpin type="TailSpin" color="#D81F26" height="50" width="50" />
+    <TailSpin type="TailSpin" color="#D81F26" height="30" width="30" />
   </div>
 )
 
