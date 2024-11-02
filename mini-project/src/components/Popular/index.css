@@ -7,10 +7,11 @@
     list-style: none;
     padding-left: 10px;
     padding-right: 10px;
+    padding-top: 50px;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 8px;
-    margin-top: 80px;
+    /* margin-top: 8px;
+    margin-top: 80px; */
     gap: 15px;
     margin-left: 32px;
   }
