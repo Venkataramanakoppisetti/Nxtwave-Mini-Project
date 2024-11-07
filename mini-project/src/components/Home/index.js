@@ -4,10 +4,10 @@ import FailureView from '../FailureView';
 import Loading from '../Loading';
 import TrendingNow from '../TrendingNow';
 import Originals from '../Originals';
-
 import Header from '../Header';
 import Footer from '../Footer';
 
+import searchErrorImg from '../../Assets/search-error.png';
 import './index.css';
 
 const apiStatusConstants = {
@@ -21,6 +21,10 @@ class Home extends Component {
   state = {
     apiStatus: apiStatusConstants.initial,
     randomHomePagePoster: {},
+    searchResultsList: [],
+    isSearching: false,
+    searchValue: '',
+    searchApiStatus: apiStatusConstants.initial,
   };
 
   componentDidMount() {
@@ -63,58 +67,128 @@ class Home extends Component {
     }
   };
 
-  onClickRetry = () => {
-    this.getRandomHomePagePoster();
+  getSearchMoviesData = async (searchValue) => {
+    this.setState({ searchApiStatus: apiStatusConstants.inProgress, isSearching: true });
+
+    const jwtToken = Cookies.get('jwt_token');
+    const searchApi = `https://apis.ccbp.in/movies-app/movies-search?search=${searchValue}`;
+    const options = {
+      method: 'GET',
+      headers: { Authorization: `Bearer ${jwtToken}` },
+    };
+
+    const response = await fetch(searchApi, options);
+
+    if (response.ok) {
+      const data = await response.json();
+      const fetchedSearchMoviesData = data.results.map((eachMovie) => ({
+        id: eachMovie.id,
+        backdropPath: eachMovie.backdrop_path,
+        title: eachMovie.title,
+        posterPath: eachMovie.poster_path,
+      }));
+
+      if (fetchedSearchMoviesData.length === 0) {
+        this.setState({
+          searchResultsList: [],
+          searchApiStatus: apiStatusConstants.failure,
+        });
+      } else {
+        this.setState({
+          searchResultsList: fetchedSearchMoviesData,
+          searchApiStatus: apiStatusConstants.success,
+        });
+      }
+    } else {
+      this.setState({ searchApiStatus: apiStatusConstants.failure });
+    }
   };
 
-  renderFailureView = () => <FailureView onClickRetry={this.onClickRetry} />;
-
-  renderLoadingView = () => <Loading />;
-
-  renderSuccessView = () => {
-    const { randomHomePagePoster } = this.state;
-    const { title, backdropPath, overview } = randomHomePagePoster;
-
-    return (
-      <div
-        style={{ backgroundImage: `url(${backdropPath})` }}
-        className="home-page"
-      >
-        <Header />
-        <div className="home-page-movie-container">
-          <h1 className="movie-title">{title}</h1>
-          <h1 className="overview">{overview}</h1>
-          <button type="button" className="play-btn">
-            Play
-          </button>
-        </div>
-      </div>
-    );
-  };
-
-  renderHomePage = () => {
-    const { apiStatus } = this.state;
-
-    switch (apiStatus) {
+  renderSearchResults = () => {
+    const { searchResultsList, searchApiStatus } = this.state;
+  
+    switch (searchApiStatus) {
       case apiStatusConstants.success:
-        return this.renderSuccessView();
+        return (
+          <ul className="search-items">
+            {searchResultsList.map((movie) => (
+              <li key={movie.id} className="movie-card">
+                <img
+                  src={movie.posterPath}
+                  alt={movie.title}
+                  className="movie-poster"
+                />
+              </li>
+            ))}
+          </ul>
+        );
       case apiStatusConstants.failure:
-        return this.renderFailureView();
+        return (
+          <div className="no-results-view">
+            <img src={searchErrorImg} className="search-error" alt="search error" />
+          </div>
+        );
       case apiStatusConstants.inProgress:
-        return this.renderLoadingView();
+        return <Loading />;
       default:
         return null;
     }
   };
+  
+  handleSearch = (event) => {
+    const { value } = event.target;
+    this.setState({ searchValue: value });
+
+    if (value.trim() !== '') {
+      this.getSearchMoviesData(value);
+    } else {
+      this.setState({ isSearching: false, searchResultsList: [] });
+    }
+  };
 
   render() {
+    const { isSearching, randomHomePagePoster, apiStatus, searchValue } = this.state;
+
     return (
       <div className="bg-container">
-        {this.renderHomePage()}
-        <h1 className="side-heading">Trending Now</h1>
-        <TrendingNow />
-        <h1 className="side-heading">Originals</h1>
-        <Originals />
+        <Header getSearchMoviesData={this.getSearchMoviesData} />
+        <div className="search-bar-container">
+          <input
+            type="text"
+            value={searchValue}
+            placeholder="Search for movies..."
+            className="search-input"
+            onChange={this.handleSearch}
+          />
+        </div>
+        {isSearching ? (
+          <div className="search-results-container">{this.renderSearchResults()}</div>
+        ) : (
+          <>
+            {apiStatus === apiStatusConstants.success && (
+              <div
+                style={{
+                  backgroundImage: `url(${randomHomePagePoster.backdropPath})`,
+                }}
+                className="home-page"
+              >
+                <div className="home-page-movie-container">
+                  <h1 className="movie-title">{randomHomePagePoster.title}</h1>
+                  <p className="overview">{randomHomePagePoster.overview}</p>
+                  <button type="button" className="play-btn">
+                    Play
+                  </button>
+                </div>
+              </div>
+            )}
+            {apiStatus === apiStatusConstants.failure && <FailureView />}
+            {apiStatus === apiStatusConstants.inProgress && <Loading />}
+            <h1 className="side-heading">Trending Now</h1>
+            <TrendingNow />
+            <h1 className="side-heading">Originals</h1>
+            <Originals />
+          </>
+        )}
         <Footer />
       </div>
     );
